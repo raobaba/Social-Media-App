@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "name": "Rajan Kumar",
+      "email": "raobaba@gmail.com",
+      "password": 1231231231,
+      "propic": "https://google.com/userpic",
+      "id": 1
+    },
+    {
+      "name": "Manish Kumar",
+      "email": "manisha@gmail.com",
+      "password": 1231231231,
+      "propic": "https://google.com/userpic",
+      "id": 2
+    },
+    {
+      "name": "Manish Kumar",
+      "email": "manisha@gmail.com",
+      "password": 1231231231,
+      "propic": "https://google.com/userpic",
+      "id": 3
+    },
+    {
+      "name": "Manish Kumar",
+      "email": "manisha@gmail.com",
+      "password": 1231231231,
+      "propic": "https://google.com/userpic",
+      "id": 4
+    }
+  ]
+}

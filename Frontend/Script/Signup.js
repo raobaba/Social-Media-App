@@ -2,7 +2,7 @@ const form = document.getElementById('signup-form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
+   console.log('object')
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
   formData.append('password', password);
   formData.append('userPic', userPic);
 
-  fetch('http://localhost:3000/users', {
+  fetch('http://localhost:8000/api/user', {
     method: 'POST',
     body: formData,
   })

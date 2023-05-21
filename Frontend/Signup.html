@@ -2,63 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="input.css">
-    <title>RealBook SignUp Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealBook Signup Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="input.css">
 </head>
 
 <body class="bg-gray-100">
-    <div class="container mx-auto max-w-md mt-20">
-        <div class="bg-white p-10 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-5">Sign Up</h2>
-            <form class="space-y-5" id="signup-form">
-                <div>
-                    <label for="name" class="block text-gray-700 font-semibold">
-                        Name <span class="text-red-500">*</span>
-                    </label>
-                    <input type="text" id="name" name="name"
-                        class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                        required />
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-700 font-semibold">
-                        Email <span class="text-red-500">*</span>
-                    </label>
-                    <input type="email" id="email" name="email"
-                        class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                        required />
-                </div>
-                <div>
-                    <label for="password" class="block text-gray-700 font-semibold">
-                        Password <span class="text-red-500">*</span>
-                    </label>
-                    <input type="password" id="password" name="password"
-                        class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                        required />
-                </div>
-                <div>
-                    <label for="user-pic" class="block text-gray-700 font-semibold">
-                        User Pic
-                    </label>
-                    <input type="file" id="user-pic" name="user-pic" accept="image/*"
-                        class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
-                </div>
-                <div>
-                    <button type="submit"
-                        class="w-full px-4 py-2 rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">
-                        Sign Up
-                    </button>
-                </div>
-            </form>
-            <div class="text-center mt-5">
-                Already have an account?
-                <a href="#" class="text-indigo-500 hover:text-indigo-600 font-semibold">Log in</a>
-            </div>
+  <div class="flex flex-col items-center justify-center min-h-screen">
+    <div class="w-full max-w-md">
+      <h2 class="text-3xl font-bold text-center mb-4">Signup Page</h2>
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <form>
+          <div class="mb-4">
+            <label for="name" class="block font-bold mb-2">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" class="w-full border-gray-300 border-2 rounded-md p-2" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block font-bold mb-2">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" class="w-full border-gray-300 border-2 rounded-md p-2" required>
+          </div>
+          <div class="mb-4">
+            <label for="username" class="block font-bold mb-2">Username</label>
+            <input type="text" id="username" name="username" placeholder="Your username" class="w-full border-gray-300 border-2 rounded-md p-2" required>
+          </div>
+          <div class="mb-4">
+            <label for="password" class="block font-bold mb-2">Password</label>
+            <input type="password" id="password" name="password" placeholder="Your password" class="w-full border-gray-300 border-2 rounded-md p-2" required>
+          </div>
+          <div class="mb-4">
+            <label for="propic" class="block font-bold mb-2">Profile Picture</label>
+            <input type="file" id="propic" name="propic" class="w-full border-gray-300 border-2 rounded-md p-2" required>
+          </div>
+          <div class="flex items-center justify-center">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-44 rounded">
+              Signup
+            </button>
+          </div>
+        </form>
+        <div class="text-center mt-4">
+          <span class="text-gray-600">Already have an account?</span>
+          <a href="index.html" class="text-blue-500 hover:text-blue-700 font-bold ml-1">LogIn</a>
         </div>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>
