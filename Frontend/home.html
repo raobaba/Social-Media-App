@@ -1,45 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="input.css">
+  <title>RealBook</title>
 </head>
-
 <body class="bg-gray-100">
-  <div class="flex flex-col items-center justify-center min-h-screen">
-    <div class="w-full max-w-md">
-      <h2 class="text-3xl font-bold text-center mb-4">Login</h2>
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <form>
-          <div class="mb-4">
-            <label for="email" class="block font-bold mb-2">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your email" class="w-full border-gray-300 border-2 rounded-md p-2">
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-white font-bold text-xl">RealBook</a>
+        </div>
+        <div class="visible md:hidden lg:hidden xl:hidden 2xl:hidden">
+          <input type="text"
+            class="block w-full bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900"
+            placeholder="Search">
+        </div>
+        <div class="hidden md:block">
+          <div class="flex items-center ml-4">
+            <div class="relative">
+              <input type="text"
+                class="block w-full bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900"
+                placeholder="Search">
+            </div>
+            <a href="#" class="ml-4 text-gray-300 hover:text-white">Friends</a>
+            <a href="#" class="ml-4 text-gray-300 hover:text-white">Notifications</a>
+            <a href="#" class="ml-4 text-gray-300 hover:text-white">Followers</a>
+            <a href="#" class="ml-4 text-gray-300 hover:text-white">Following</a>
+            <a href="#" class="ml-4 text-gray-300 hover:text-white">
+              <img class="h-8 w-8 rounded-full" src="https://via.placeholder.com/150" alt="User Avatar">
+            </a>
           </div>
-          <div class="mb-4">
-            <label for="username" class="block font-bold mb-2">Username</label>
-            <input type="text" id="username" name="username" placeholder="Your username" class="w-full border-gray-300 border-2 rounded-md p-2">
-          </div>
-          <div class="mb-4">
-            <label for="password" class="block font-bold mb-2">Password</label>
-            <input type="password" id="password" name="password" placeholder="Your password" class="w-full border-gray-300 border-2 rounded-md p-2">
-          </div>
-          <div class="flex items-center justify-center">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Login
-            </button>
-          </div>
-        </form>
-        <div class="text-center mt-4">
-          <span class="text-gray-600">Don't have an account?</span>
-          <a href="signup.html" class="text-blue-500 hover:text-blue-700 font-bold ml-1">Signup</a>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button id="menu-toggle" type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
+            aria-label="Main menu" aria-expanded="false">
+            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
-  </div>
-</body>
+    <div id="menu" class="hidden sm:hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 sm:px-3">
+        <a href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Home</a>
+        <a href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Friends</a>
+        <a href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Notifications</a>
+        <a href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Followers</a>
+        <a href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Following</a>
+      </div>
+      <div class="pt-4 pb-3 border-t border-gray-700">
+        <div class="flex items-center px-5">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="User Avatar">
+          </div>
+          <div class="ml-3">
+            <div class="text-base font-medium leading-none text-white">John Doe</div>
+            <div class="mt-1 text-sm font-medium leading-none text-gray-400">johndoe@example.com</div>
+          </div>
+        </div>
+        <div class="mt-3 px-2">
+          <a href="#"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Your
+            Profile</a>
+          <a href="#"
+            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Settings</a>
+          <a href="#"
+            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Sign
+            out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
 </html>

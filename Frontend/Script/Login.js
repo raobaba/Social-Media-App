@@ -14,7 +14,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     })
       .then(response => {
         if (response.ok) {
-          console.log("Login successful!");
+          alert("Login successful!");
         } else if (response.status === 401) {
           console.log("User does not exist. Please create a new user.");
         } else {

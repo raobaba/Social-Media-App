@@ -32,6 +32,30 @@
       "flowings": [],
       "posts": [],
       "id": 3
+    },
+    {
+      "name": "Rajan Kumar",
+      "email": "shrikishunr7@gmail.com",
+      "username": "RajanRao",
+      "password": "123",
+      "propic": "C:\\fakepath\\propic.jpg",
+      "friends": [],
+      "flowers": [],
+      "flowings": [],
+      "posts": [],
+      "id": 4
+    },
+    {
+      "name": "Rajan Kumar",
+      "email": "shrikishunr7@gmail.com",
+      "username": "RajanRao",
+      "password": "12312313",
+      "propic": "C:\\fakepath\\propic.jpg",
+      "friends": [],
+      "flowers": [],
+      "flowings": [],
+      "posts": [],
+      "id": 5
     }
   ]
 }
