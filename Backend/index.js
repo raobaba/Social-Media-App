@@ -1,75 +1,71 @@
 const express = require('express');
 const jsonServer = require('json-server');
-
+const cors = require('cors');
+const fs = require('fs');
 const app = express();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router('./db.json');
 const middlewares = jsonServer.defaults();
 
 // Apply middleware
 app.use(express.json());
-app.use('/api', middlewares, router);
+app.use('/api',middlewares, router);
+app.use(cors({ origin: '*' }));
 
-// Get all users
-app.get('/api/users', (req, res) => {
+app.get('/api/users', (req, res) => {  // Get all users
     res.json(db.users);
-  });
-  
-  // Get a user by ID
-  app.get('/api/users/:id', (req, res) => {
+    console.log(db.users);
+});
+
+app.get('/api/users/:id', (req, res) => { // Get a user by ID
     const userId = parseInt(req.params.id);
     console.log(userId);
     const user = db.users.find(user => user.id === userId);
     if (user) {
-      res.json(user);
+        res.json(user);
     } else {
-      res.status(404).json({ error: 'User not found' });
+        res.status(404).json({ error: 'User not found' });
     }
-  });
-  
-  // Create a new user
-  app.post('/api/users', (req, res) => {
-    const newUser = req.body;
-    console.log(newUser);
-    // Check if user with the same email already exists
-    const existingUser = db.users.find(user => user.email === newUser.email);
-    if (existingUser) {
-      return res.status(400).json({ error: 'User with the same email already exists' });
+});
+
+
+app.post('/api/users', (req, res) => { // Create a new user
+    const { email, username, password } = req.body;
+    console.log(email, username, password);
+    // Check if the email already exists in the database
+    const user = db.users.find((user) => user.email === email);
+    if (user) {
+      // Return an error response if the email is already registered
+      return res.status(400).json({ error: 'Email already exists' });
     }
-    // Assuming users are stored as an array in `db.json`
+    // If the email is unique, create a new user object and save it to the database
+    const newUser = { email, username, password };
     db.users.push(newUser);
-    res.status(201).json(newUser);
-  });
-  
-  // Update a user
-  app.put('/api/users/:id', (req, res) => {
+});
+
+app.put('/api/users/:id', (req, res) => {// Update a user
     const userId = parseInt(req.params.id);
     const updatedUser = req.body;
     const index = db.users.findIndex(user => user.id === userId);
-  
     if (index !== -1) {
-      db.users[index] = updatedUser;
-      res.json(updatedUser);
+        db.users[index] = updatedUser;
+        res.json(updatedUser);
     } else {
-      res.status(404).json({ error: 'User not found' });
+        res.status(404).json({ error: 'User not found' });
     }
-  });
-  
-  // Delete a user
-  app.delete('/api/users/:id', (req, res) => {
+});
+
+app.delete('/api/users/:id', (req, res) => {// Delete a user
     const userId = parseInt(req.params.id);
     const index = db.users.findIndex(user => user.id === userId);
-  
     if (index !== -1) {
-      db.users.splice(index, 1);
-      res.sendStatus(204);
+        db.users.splice(index, 1);
+        res.sendStatus(204);
     } else {
-      res.status(404).json({ error: 'User not found' });
+        res.status(404).json({ error: 'User not found' });
     }
-  });
-  
+});
 
-// Start the server
-const port = 8000;
+const port = 8000;  // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+    console.log(`http://localhost:${port}`);
 });

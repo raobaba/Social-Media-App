@@ -1,10 +1,14 @@
 {
   "users": [
     {
-      "name": "Rajan Kumar",
-      "email": "raobaba@gmail.com",
+      "name": "Manish Kumar",
+      "email": "manisha@gmail.com",
       "password": 1231231231,
       "propic": "https://google.com/userpic",
+      "friends": [],
+      "flowers": [],
+      "flowings": [],
+      "posts": [],
       "id": 1
     },
     {
@@ -12,6 +16,10 @@
       "email": "manisha@gmail.com",
       "password": 1231231231,
       "propic": "https://google.com/userpic",
+      "friends": [],
+      "flowers": [],
+      "flowings": [],
+      "posts": [],
       "id": 2
     },
     {
@@ -19,14 +27,11 @@
       "email": "manisha@gmail.com",
       "password": 1231231231,
       "propic": "https://google.com/userpic",
+      "friends": [],
+      "flowers": [],
+      "flowings": [],
+      "posts": [],
       "id": 3
-    },
-    {
-      "name": "Manish Kumar",
-      "email": "manisha@gmail.com",
-      "password": 1231231231,
-      "propic": "https://google.com/userpic",
-      "id": 4
     }
   ]
 }
