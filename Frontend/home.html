@@ -1,12 +1,14 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="input.css">
-  <title>RealBook</title>
+  <title>RealBook | Meet Yourself</title>
 </head>
+
 <body class="bg-gray-100">
   <nav class="bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,13 +28,21 @@
                 class="block w-full bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900"
                 placeholder="Search">
             </div>
-            <a href="#" class="ml-4 text-gray-300 hover:text-white">Friends</a>
-            <a href="#" class="ml-4 text-gray-300 hover:text-white">Notifications</a>
-            <a href="#" class="ml-4 text-gray-300 hover:text-white">Followers</a>
-            <a href="#" class="ml-4 text-gray-300 hover:text-white">Following</a>
-            <a href="#" class="ml-4 text-gray-300 hover:text-white">
-              <img class="h-8 w-8 rounded-full" src="https://via.placeholder.com/150" alt="User Avatar">
-            </a>
+            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Friends</a>
+            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Notifications</a>
+            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Followers</a>
+            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Following</a>
+            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Admin</a>
+            <div class="relative ml-4">
+              <img id="display_image" class="h-8 w-8 rounded-full cursor-pointer" src="https://via.placeholder.com/150" alt="User Avatar"
+                onclick="toggleDropdown()">
+              <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Log Out</a>
+                <a href="#" id="change" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Change Pro Pic</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Settings</a>
+              </div>
+
+            </img>
           </div>
         </div>
         <div class="-mr-2 flex md:hidden">
@@ -58,11 +68,13 @@
           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Followers</a>
         <a href="#"
           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Following</a>
+        <a href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Admin</a>
       </div>
       <div class="pt-4 pb-3 border-t border-gray-700">
         <div class="flex items-center px-5">
           <div class="flex-shrink-0">
-            <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="User Avatar">
+            <img class="h-10 w-10 rounded-full" id="display_image" alt="User Avatar">
           </div>
           <div class="ml-3">
             <div class="text-base font-medium leading-none text-white">John Doe</div>
@@ -82,8 +94,11 @@
       </div>
     </div>
   </nav>
-
   <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('profileDropdown');
+      dropdown.classList.toggle('hidden');
+    }
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
     menuToggle.addEventListener('click', () => {
@@ -91,6 +106,29 @@
       menuToggle.setAttribute('aria-expanded', !expanded);
       menu.classList.toggle('hidden');
     });
+
+
+
+
+var anchorTag = document.getElementById('change');
+anchorTag.addEventListener('click', function(event) {
+  event.preventDefault();
+  var inputFile = document.createElement('input');
+  inputFile.type = 'file';
+  var uploaded_image = "";
+  inputFile.click();
+  inputFile.addEventListener('change',function(){
+    const reader = new FileReader();
+    reader.addEventListener('load',()=>{
+        uploaded_image = reader.result;
+        console.log(uploaded_image)
+        document.getElementById('display_image').style.backgroundImage=`url(${uploaded_image})`;
+    })
+    reader.readAsDataURL(this.files[0]);
+  })
+});
+
   </script>
 </body>
+
 </html>

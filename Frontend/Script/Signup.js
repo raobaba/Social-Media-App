@@ -5,21 +5,26 @@ const submitData = async (event) => {
   const email = document.getElementById('email').value;
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-  const propic = document.getElementById('propic').value;
+  const confirmpassword = document.getElementById('confirmpassword').value;
   const friends = [];
-  const flowers = [];
-  const flowings = [];
-  const posts = []
+  const followers = [];
+  const followings = [];
+  const posts = [];
+  //confirm password here
+  if(password!==confirmpassword){
+     alert("password is not matching!")
+     return
+  }
   // Create data object
   const data = {
     name,
     email,
     username,
     password,
-    propic,
+    confirmpassword,
     friends,
-    flowers,
-    flowings,
+    followers,
+    followings,
     posts
   };
 
@@ -33,15 +38,17 @@ const submitData = async (event) => {
     });
 
     if (response.ok) {
-      alert('Data has been successfully Registered.');
+      localStorage.setItem('userCredential',JSON.stringify(data));
+      alert("Signup Successful");
+      window.location.href = 'index.html';
     } else {
-      alert("Error while Registeration")
       console.log('Error posting data:', response.status);
     }
   } catch (error) {
     console.log('Error:', error);
   }
 };
+
 // Get the form element
 const form = document.getElementById('signup-form');
 // Attach event listener to form submission
