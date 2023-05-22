@@ -154,6 +154,18 @@
       "followings": [],
       "posts": [],
       "id": 13
+    },
+    {
+      "name": "Rajan Kumar",
+      "email": "shrikishunr7@gmail.com",
+      "username": "RajanRao",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 14
     }
   ]
 }

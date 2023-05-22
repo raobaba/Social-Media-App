@@ -1,31 +1,31 @@
+// Function to handle form submission
 const submitData = async (event) => {
   event.preventDefault(); // Prevent form submission
+
   // Get form values
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-  const confirmpassword = document.getElementById('confirmpassword').value;
-  const friends = [];
-  const followers = [];
-  const followings = [];
-  const posts = [];
-  //confirm password here
-  if(password!==confirmpassword){
-     alert("password is not matching!")
-     return
+  const confirmPassword = document.getElementById('confirmpassword').value;
+
+  // Confirm password
+  if (password !== confirmPassword) {
+    alert("Password is not matching!");
+    return;
   }
+
   // Create data object
   const data = {
     name,
     email,
     username,
     password,
-    confirmpassword,
-    friends,
-    followers,
-    followings,
-    posts
+    confirmpassword: confirmPassword,
+    friends: [],
+    followers: [],
+    followings: [],
+    posts: []
   };
 
   try {
@@ -38,7 +38,7 @@ const submitData = async (event) => {
     });
 
     if (response.ok) {
-      localStorage.setItem('userCredential',JSON.stringify(data));
+      localStorage.setItem('userCredential', JSON.stringify(data));
       alert("Signup Successful");
       window.location.href = 'index.html';
     } else {
@@ -51,5 +51,6 @@ const submitData = async (event) => {
 
 // Get the form element
 const form = document.getElementById('signup-form');
+
 // Attach event listener to form submission
 form.addEventListener('submit', submitData);
