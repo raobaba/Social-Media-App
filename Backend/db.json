@@ -166,6 +166,42 @@
       "followings": [],
       "posts": [],
       "id": 14
+    },
+    {
+      "name": "Rajan Kumar",
+      "email": "raobaba@gmail.com",
+      "username": "Rajan Kumar",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 15
+    },
+    {
+      "name": "Rajan Kumar",
+      "email": "shrikishunr7@gmail.com",
+      "username": "RajanRao",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 16
+    },
+    {
+      "name": "Rajan Kumar",
+      "email": "admin@gmail.com",
+      "username": "Rajan Kumar",
+      "password": "123456",
+      "confirmpassword": "123456",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 17
     }
   ]
 }

@@ -1,19 +1,16 @@
 function toggleDropdown() {
-    const dropdown = document.getElementById('profileDropdown');
-    dropdown.classList.toggle('hidden');
+    var dropdown = document.getElementById("profileDropdown");
+    dropdown.classList.toggle("hidden");
   }
-
-  const profileDropdown = document.getElementById('profileDropdown');
-  profileDropdown.addEventListener('click', toggleDropdown);
-
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-    menuToggle.setAttribute('aria-expanded', !expanded);
-    menu.classList.toggle('hidden');
+  
+  var menuToggle = document.getElementById("menu-toggle");
+  var menu = document.getElementById("menu");
+  
+  menuToggle.addEventListener("click", function() {
+    menu.classList.toggle("hidden");
+    var expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
+    menuToggle.setAttribute("aria-expanded", !expanded);
   });
-
 
   window.onload = function() {
     var logoutLink = document.querySelector("#profileDropdown a[href='#']");
@@ -64,3 +61,24 @@ function toggleDropdown() {
   document.getElementById('display_image').style.backgroundRepeat = "no-repeat";
   document.getElementById('display_image').style.backgroundSize = "cover";
   document.getElementById('display_image').style.backgroundPosition = "center";
+
+
+      // Check if the email matches the required email
+      const email = JSON.parse(localStorage.getItem('userCredential'));
+      const isAdmin = email.email === 'admin@gmail.com';
+      console.log(isAdmin)
+  
+      // Function to toggle the visibility of the Admin section
+      function toggleAdminSection() {
+        const adminSection = document.getElementById('adminSection');
+        adminSection.style.display = isAdmin ? 'block' : 'none';
+      }
+      
+      toggleAdminSection()
+
+
+    //   <div class="visible md:hidden lg:hidden xl:hidden 2xl:hidden">
+    //   <input type="text"
+    //     class="block w-full bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900"
+    //     placeholder="Search">
+    // </div>
