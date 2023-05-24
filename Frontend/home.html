@@ -28,11 +28,12 @@
                 class="block w-full bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900"
                 placeholder="Search">
             </div>
-            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Friends</a>
-            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Notifications</a>
-            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Followers</a>
-            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Following</a>
-            <a href="#" class="ml-10 text-gray-200 hover:text-red-600">Admin</a>
+            <a href="#" class="ml-10 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="homeLink">Home</a>
+            <a href="#" class="ml-10 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="friendsLink">Friends</a>
+            <a href="#" class="ml-10 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="notificationsLink">Notifications</a>
+            <a href="#" class="ml-10 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="followersLink">Followers</a>
+            <a href="#" class="ml-10 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="followingLink">Following</a>
+            <a href="#" class="ml-10 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="adminLink">Admin</a>
             <div class="relative ml-4">
               <img id="display_image" class="h-8 w-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
               <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
@@ -40,7 +41,6 @@
                 <a href="#" id="change" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Change Pro Pic</a>
                 <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Settings</a>
               </div>
-              </img>
             </div>
           </div>
         </div>
@@ -57,43 +57,31 @@
       </div>
       <div id="menu" class="visible md:hidden lg:hidden xl:hidden 2xl:hidden">
         <div class="px-2 pt-2 pb-3 sm:px-3">
-          <a href="#"
-            class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Home</a>
-          <a href="#"
-            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Friends</a>
-          <a href="#"
-            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Notifications</a>
-          <a href="#"
-            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Followers</a>
-          <a href="#"
-            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Following</a>
-          <a href="#"
-            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Admin</a>
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileHomeLink">Home</a>
+          <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileFriendsLink">Friends</a>
+          <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileNotificationsLink">Notifications</a>
+          <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileFollowersLink">Followers</a>
+          <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileFollowingLink">Following</a>
+          <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileAdminLink">Admin</a>
         </div>
         <div class="pt-4 pb-3 border-t border-gray-700">
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" id="display_image" alt="User Avatar">
+              <img class="h-10 w-10 rounded-full cursor-pointer" id="display_image" onclick="toggleDropdown()">
             </div>
             <div class="ml-3">
-              <div class="text-base font-medium leading-none text-white">John Doe</div>
-              <div class="mt-1 text-sm font-medium leading-none text-gray-400">johndoe@example.com</div>
+              <div class="text-base font-medium leading-none text-white" id="userName"></div>
+              <div class="mt-1 text-sm font-medium leading-none text-gray-400" id="userEmail"></div>
             </div>
           </div>
-          <div class="mt-3 px-2">
-            <a href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Your
-              Profile</a>
-            <a href="#"
-              class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Settings</a>
-            <a href="#"
-              class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Sign
-              out</a>
+          <div id="profileDropdown" class="mt-3 px-2">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileProfileLink">Your Profile</a>
+            <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileSettingsLink">Settings</a>
+            <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out nav-link" id="mobileSignOutLink">Sign out</a>
           </div>
         </div>
       </div>
   </nav>
   <script src="./Script/Home.js"></script>
 </body>
-
 </html>
