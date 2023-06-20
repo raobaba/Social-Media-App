@@ -5,20 +5,18 @@ const fs = require('fs');
 const app = express();
 const router = jsonServer.router('./db.json');
 const middlewares = jsonServer.defaults();
-
 // Read the JSON file
-
-const data = fs.readFileSync('db.json');
+const data = fs.readFileSync('./db.json');
 const users = JSON.parse(data);
 
 // Apply middleware
-
 app.use(express.json());
 app.use('/api', middlewares, router);
 app.use(cors({ origin: '*' }));
+
 app.get('/api/users', (req, res) => {  // Get all users
-    res.json(db.users);
-    console.log(db.users);
+    console.log(users)
+    res.json(db.users);  
 });
 
 app.get('/api/users/:id', (req, res) => { // Get a user by ID
@@ -34,12 +32,10 @@ app.get('/api/users/:id', (req, res) => { // Get a user by ID
 
 app.post('/api/users', (req, res) => { // Create a new user
     console.log(req.body.email);
-    // Check if the email already exists in the data
     const existingEmail = db.users.find(entry => entry.email ===req.body.email);
     if (existingEmail) {
       return res.status(400).json({ error: 'Email already exists' });
     }
-    // Add the new entry to the data array
     users.push(req.body);
     res.json({ message: 'Data added successfully' });
   });
