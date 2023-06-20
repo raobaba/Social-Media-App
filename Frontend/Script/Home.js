@@ -2,16 +2,13 @@ function toggleDropdown() {
   var dropdown = document.getElementById("profileDropdown");
   dropdown.classList.toggle("hidden");
 }
-
 var menuToggle = document.getElementById("menu-toggle");
 var menu = document.getElementById("menu");
-
 menuToggle.addEventListener("click", function () {
   menu.classList.toggle("hidden");
   var expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
   menuToggle.setAttribute("aria-expanded", !expanded);
 });
-
 window.onload = function () {
   var logoutLink = document.querySelector("#profileDropdown a[href='#']");
   logoutLink.addEventListener("click", function (event) {
@@ -21,8 +18,7 @@ window.onload = function () {
 };
 
 
-
-
+// ------------------------------------------------------------
 var anchorTag = document.getElementById('change');
 anchorTag.addEventListener('click', function (event) {
   event.preventDefault();
@@ -55,18 +51,17 @@ anchorTag.addEventListener('click', function (event) {
     reader.readAsDataURL(this.files[0]);
   });
 });
-
 var image = JSON.parse(localStorage.getItem('image'));
 document.getElementById('display_image').style.backgroundImage = `url(${image})`;
 document.getElementById('display_image').style.backgroundRepeat = "no-repeat";
 document.getElementById('display_image').style.backgroundSize = "cover";
 document.getElementById('display_image').style.backgroundPosition = "center";
-
+// -------------------------------------------------------------
 
 // Check if the email matches the required email
 const email = JSON.parse(localStorage.getItem('userCredential'));
 const isAdmin = email.email === 'admin@gmail.com';
-console.log(isAdmin)
+// console.log(isAdmin)
 document.getElementById('userName').innerText = email.name;
 document.getElementById('userEmail').innerText = email.email;
 
@@ -100,3 +95,42 @@ function toggleActive(elementId) {
   const clickedLink = document.getElementById(elementId);
   clickedLink.classList.add('text-sky-700');
 }
+
+
+//----------------this code is for createStory --------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollContainer = document.querySelector(".scroll-container");
+  const scrollContent = document.querySelector(".scroll-content");
+  const scrollLeftButton = document.querySelector(".scroll-left");
+  const scrollRightButton = document.querySelector(".scroll-right");
+  const scrollStep = 200; // Change this value to adjust scrolling speed
+  scrollLeftButton.addEventListener("click", function () {
+    scrollContainer.scrollBy({
+      left: -scrollStep,
+      behavior: "smooth",
+    });
+  });
+  scrollRightButton.addEventListener("click", function () {
+    scrollContainer.scrollBy({
+      left: scrollStep,
+      behavior: "smooth",
+    });
+  });
+  scrollContainer.addEventListener("scroll", function () {
+    scrollLeftButton.style.visibility =
+      scrollContainer.scrollLeft > 0 ? "visible" : "hidden";
+    scrollRightButton.style.visibility =
+      scrollContainer.scrollLeft < scrollContent.scrollWidth - scrollContainer.offsetWidth
+        ? "visible"
+        : "hidden";
+  });
+});
+var divTag = document.getElementById('createStory');
+var img = document.createElement('img');
+img.src = image;
+img.style.width='100%';
+img.style.marginLeft='10px'
+img.style.height='70%';
+divTag.appendChild(img);
+
+///---------------------------createStory------------------------
