@@ -39,9 +39,8 @@ const submitData = async (event) => {
 
     if (response.ok) {
       localStorage.setItem('userCredential', JSON.stringify(data));
-      setTimeout(function() {
-        window.location.href = 'index.html';
-      }, 3000);
+      alert('You have successfully registered!')
+      window.location.href = 'index.html'; // Redirect to index.html
     } else {
       console.log('Error posting data:', response.status);
     }

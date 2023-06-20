@@ -32,6 +32,54 @@
       "flowings": [],
       "posts": [],
       "id": 3
+    },
+    {
+      "name": "dhanjee Thakur",
+      "email": "admin@gmail.com",
+      "username": "RajanRao",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 4
+    },
+    {
+      "name": "dhanjee Thakur",
+      "email": "admin@gmail.com",
+      "username": "RajanRao",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 5
+    },
+    {
+      "name": "dhanjee Thakur",
+      "email": "admin@gmail.com",
+      "username": "RajanRao",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 6
+    },
+    {
+      "name": "dhanjee Thakur",
+      "email": "shrikishunr7@gmail.com",
+      "username": "RajanRao",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "friends": [],
+      "followers": [],
+      "followings": [],
+      "posts": [],
+      "id": 7
     }
   ]
 }

@@ -7,6 +7,102 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="input.css">
   <title>RealBook | Meet Yourself</title>
+  <style>
+    .h-64 {
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .scroll-button {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: lightgray;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1;
+    }
+  
+    .scroll-left {
+      left: 0;
+      background-color: rgb(249,250,251);
+    }
+  
+    .scroll-right {
+      right: 0;
+      background-color: rgb(249,250,251);
+    }
+  
+    .scroll-container {
+      overflow-x: scroll;
+      scrollbar-width: thin;
+      white-space: nowrap;
+    }
+  
+    .scroll-content {
+      display: flex;
+      gap: 1rem;
+      padding: 0 40px;
+    }
+  
+    .scroll-content div {
+      width: 1/6;
+      min-width: 100px;
+      flex-shrink: 0;
+      height: 100%;
+      border: 1px solid black;
+      border-radius: 0.25rem;
+    }
+    
+    /* Hide scroll bar */
+    .scroll-container::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      background-color: transparent;
+    }
+  </style>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const scrollContainer = document.querySelector(".scroll-container");
+      const scrollContent = document.querySelector(".scroll-content");
+      const scrollLeftButton = document.querySelector(".scroll-left");
+      const scrollRightButton = document.querySelector(".scroll-right");
+  
+      const scrollStep = 200; // Change this value to adjust scrolling speed
+  
+      scrollLeftButton.addEventListener("click", function () {
+        scrollContainer.scrollBy({
+          left: -scrollStep,
+          behavior: "smooth",
+        });
+      });
+  
+      scrollRightButton.addEventListener("click", function () {
+        scrollContainer.scrollBy({
+          left: scrollStep,
+          behavior: "smooth",
+        });
+      });
+  
+      scrollContainer.addEventListener("scroll", function () {
+        // Update button visibility based on scroll position
+        scrollLeftButton.style.visibility =
+          scrollContainer.scrollLeft > 0 ? "visible" : "hidden";
+        scrollRightButton.style.visibility =
+          scrollContainer.scrollLeft < scrollContent.scrollWidth - scrollContainer.offsetWidth
+            ? "visible"
+            : "hidden";
+      });
+    });
+  </script>
+  
+  
+  
 </head>
 
 <body class="bg-gray-100">
@@ -82,6 +178,37 @@
         </div>
       </div>
   </nav>
+
+
+
+  <div class="m-2 h-72 rounded-md border bg-gray-50 flex justify-evenly">
+    <div class="h-64 m-3 w-full flex items-center border border-black">
+      <div class="scroll-button scroll-left border border-black ">&lt;</div>
+      <div class="scroll-container h-52 ">
+        <div class="scroll-content h-52 ">
+          <div class="w-1/6 rounded-md h-full border border-black">first</div>
+          <div class="w-1/6 rounded-md h-full border border-black">second</div>
+          <div class="w-1/6 rounded-md h-full border border-black">third</div>
+          <div class="w-1/6 rounded-md h-full border border-black">fourth</div>
+          <div class="w-1/6 rounded-md h-full border border-black">fifth</div>
+          <div class="w-1/6 rounded-md h-full border border-black">sixth</div>
+          <div class="w-1/6 rounded-md h-full border border-black">seventh</div>
+          <div class="w-1/6 rounded-md h-full border border-black">eighth</div>
+        </div>
+      </div>
+      <div class="scroll-button scroll-right border border-black">&gt;</div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+
+
+
+
+  
   <script src="./Script/Home.js"></script>
 </body>
 </html>
